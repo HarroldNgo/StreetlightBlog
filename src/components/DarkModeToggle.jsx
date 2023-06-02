@@ -7,10 +7,15 @@ export const DarkModeToggle = () => {
   const { isDark, setIsDark } = useDarkMode();
 
   const toggle = () => {
-    setIsDark(!isDark)
+    setIsDark(!isDark)    
   }
+
+  const getImage = isDark ? "/assets/Website_Darkmode.png" : "/assets/Website_Lightmode.png"
+
   return (
-    <button onClick={toggle} className={'toggle--button ' + (isDark ? 'toggle-dark' : '')}>
-    </button>
+    <div className="darkmodetoggle">
+      <img src={getImage} onClick={toggle} className="darktoggle" alt="" />
+    </div>
+
   );
 };

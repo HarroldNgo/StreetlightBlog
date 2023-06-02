@@ -41,7 +41,7 @@
     font-family: 'Darker Grotesque', sans-serif;
 }
 
-.title img {
+.titlelogo {
     width: 55px;
     height: 100%;
     margin-top: 10px;
@@ -57,8 +57,8 @@
     left: 30px;
 }
 .darkmode-wrapper{
-    margin-top: 40px;
-    
+    width: 60px;
+    padding: 20px;
 }
 .overlay {
     z-index: 1000;
@@ -161,7 +161,6 @@
     .darkmode-wrapper{
         position: absolute;
         right: 10px;
-        margin-top: 40px;
     }
     .titletext {
         display: none;

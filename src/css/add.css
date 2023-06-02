@@ -1,5 +1,6 @@
 .admin-content{
     padding-top: 50px;
+    width: 80%;
 }
 .admin-content input, .admin-content textarea{
     color: #000

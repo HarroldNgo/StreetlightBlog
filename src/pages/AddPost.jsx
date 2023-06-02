@@ -89,7 +89,7 @@ export default function AddPost() {
                             onChange={e => setDesc(e.target.value)}></textarea>
                     </div>
                     <div className="writeFormGroup">
-                        <h3>Embedded Video Link:</h3>
+                        <h3>Video Link:</h3>
                         <input
                             type="text"
                             placeholder="VideoLink"

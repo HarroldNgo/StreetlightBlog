@@ -2,6 +2,7 @@ import "../css/singlepost.css";
 import { useLocation } from "react-router";
 import { useEffect, useState } from "react";
 import { useQuery } from '@tanstack/react-query'
+import ReactPlayer from 'react-player/youtube'
 
 import * as api from '../Api.jsx'
 
@@ -36,7 +37,7 @@ export default function SinglePost() {
                     <h1 className="post-title">{post[0].title}</h1>
                     {post[0].videolink && (
                         <div className="post-video">
-                            <iframe width="560" height="315" src={post[0].videolink} title="Post Video" frameBorder="0" crossOrigin="anonymous" allowFullScreen></iframe>
+                            <ReactPlayer width={560} height={315} url={post[0].videolink} controls="true" />
                         </div>
                     )}
                     <p className="paragraph">{post[0].body}</p>

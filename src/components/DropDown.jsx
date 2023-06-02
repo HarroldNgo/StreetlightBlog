@@ -26,6 +26,11 @@ export default function DropDown({ selected, setSelected }) {
                         setIsActive(false)}}>
                         Stories
                     </div>
+                    <div className="dropdown-item" onClick={(e) => {
+                        setSelected("test")
+                        setIsActive(false)}}>
+                        test
+                    </div>
                 </div>
 
             )}
