@@ -104,7 +104,7 @@ export default function EditPost() {
               placeholder='Write stuffs'
               type='text'
               className='writeInput captionwriteinput'
-              value={data[0].desc}
+              defaultValue={data[0].desc}
               onChange={e => setDesc(e.target.value)}></textarea>
           </div>
           <div className="writeFormGroup">
@@ -123,7 +123,7 @@ export default function EditPost() {
               placeholder='Write stuffs'
               type='text'
               className='writeInput writeText'
-              value={post.body}
+              defaultValue={post.body}
               onChange={e => setBody(e.target.value)}></textarea>
           </div>
           <div className="writeFormGroup">
