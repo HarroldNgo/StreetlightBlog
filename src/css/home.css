@@ -1,0 +1,92 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .copyright{
+    text-align: center;
+    bottom: 0;
+    padding: 10px 0;
+    width: 80%;
+  }
+
+
+  /* SLIDER CSS */
+  .post-wrapper {
+    width: 250vh;
+    position: relative;
+    overflow: hidden;
+}
+.spost {
+    position: relative;
+    width: 100%;
+    background: black;
+}
+.hover {
+    transition: 1s ease-in;
+    transition: 0.5s ease-out;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    
+}
+.hovertitle, .hovertext{
+    margin: 0px 20px;
+    padding: 15px;
+    color: white;
+    word-wrap: break-word;
+    font-size: 1.8em;
+    text-align: center;
+    white-space: pre-wrap; 
+}
+.slider-image{
+    width: 100%;
+    opacity: 1;
+    transition: 1s ease-in;
+    transition: 0.5s ease-out;
+    vertical-align: bottom;
+}
+.grey {
+    filter: grayscale(100%);
+}
+
+.spost:hover .slider-image{
+    opacity: 0.2;
+}
+.spost:hover .hover{
+    opacity: 1;
+}
+.slick-slide>div {
+    margin: 0 15px;
+}
+
+
+
+/*MOBILE*/
+.home-mobile{
+    display: none;
+    flex-direction: column;
+    width: 95%;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 650px) {
+    .post-wrapper {
+      width: 300%;
+      margin-top: 10px;
+    }
+    .home-mobile {
+        display: flex;
+    }
+    .home-desktop {
+        display: none;
+    }
+    .spost{
+        margin: 10px 0px;
+      }
+  }

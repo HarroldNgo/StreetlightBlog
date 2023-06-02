@@ -1,0 +1,9 @@
+.toggle--button {
+    width: 100px;
+    height: 100px;
+    border: none;
+    background:  transparent url('/assets/lightswitch.webp') no-repeat top;
+}
+.toggle-dark {
+    background:  transparent url('/assets/darkswitch.webp') no-repeat top;
+}

@@ -1,0 +1,58 @@
+.singlecat-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.singlecat-posts {
+    position: relative;
+}
+
+.myVideo {
+    position: sticky;
+    top: 0px;
+    min-height: 100vh;
+    min-width: 100%;
+    margin-bottom: -5px;
+    background-size: cover;
+}
+
+.singlecat-inner-wrapper {
+    position: absolute;
+    top: 0px;
+    margin: 30px;
+}
+
+.singlecats {
+    font-size: 4.5vw;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 5px;
+    margin: 30px 20px;
+    z-index: 999;
+}
+
+.singlecatslink:hover {
+    transition: 0.5s ease-in;
+    transition: 0.5s ease-out;
+    color: #e3b721;
+}
+.mobile{
+    display: none;
+}
+
+
+@media screen and (max-width: 550px) {
+    .singlecats{
+        font-size: 6vw;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+    .myVideo{
+        margin-top: 0px;
+        width: 100%;
+    }
+  }

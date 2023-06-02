@@ -1,0 +1,139 @@
+/*animation: 1.5s ease-out 0s 1 slideInFromLeft;*/
+.sections{
+    margin: auto 50px;
+    text-transform: uppercase;
+}
+
+.sections .category-title{
+    padding: 10px;
+}
+.new-category-wrapper{
+  height: 100%;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+}
+.poetry, .movies, .stories{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -999;
+}
+.poetry{
+  background-image: url('/assets/Poetry.jpg');
+}
+.movies{
+  background-image: url('/assets/Movies.jpg');
+}
+.stories{
+  background-image: url('/assets/c3.jpg');
+}
+.new-category-wrapper:hover a, .new-category-wrapper:hover img{
+  transition: 0.25s ease-in;
+  transition: 0.25s ease-out;
+  opacity: 0;
+}
+.new-category-wrapper a:hover{
+  transition: 0.25s ease-in;
+  transition: 0.25s ease-out;
+  color: #e3b721;
+  z-index: 999;
+  opacity: 100;
+}
+.new-category-wrapper .tree:hover{
+  opacity: 100;
+  filter: none;
+  transition: 0.5s ease-in-out;
+}
+.tree:hover ~ a, .tree:hover ~ img, .tree:hover {
+  opacity: 100;
+}
+
+.new-category-wrapper:has(.c1:hover) .poetry{
+  opacity: 1;
+}
+.new-category-wrapper:has(.c2:hover) .movies{
+  opacity: 1;
+}
+.new-category-wrapper:has(.c3:hover) .stories{
+  opacity: 1;
+}
+.category{
+  font-size: 50px;
+  margin: 20px;
+  pointer-events: auto;
+  transition: 0.5s ease-in-out;
+}
+.tree{
+  position: absolute;
+  filter: grayscale(100%);
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  transition: 0.5s ease-in-out;
+  pointer-events: auto;
+}
+.triangle{
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 70%;
+  width: 40%;
+  z-index: -999;
+  transition: 0.5s ease-in-out;
+}
+.c1{
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+}
+.c2{
+  position: absolute;
+  top: 130%;
+  left: 22%;
+  transform: translate(-50%, -50%);
+}
+.c3{
+  position: absolute;
+  top: 130%;
+  left: 76%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 1024px) {
+  .tree{
+    width: 60%;
+  }
+  .triangle{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .triangle{
+    display: none;
+  }
+  .tree{
+    width: 100%;
+    top: 77%;
+    left: 49.5%;
+  }
+  .category{
+    font-size: 10vw;
+  }
+  .c2, .c3{
+    top: 105%;
+  }
+  .c2{
+    left: 18%;
+  }
+  .c3{
+    left: 75%;
+  }
+  .c1{
+    left: 48%;
+  }
+}

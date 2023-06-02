@@ -1,0 +1,11 @@
+
+
+.missing {
+  font-size: 2em;
+  padding: 10px 30px;
+  line-height: 1.5em;
+}
+
+.missing a {
+  text-decoration: underline;
+}

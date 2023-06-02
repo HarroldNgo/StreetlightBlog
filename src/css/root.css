@@ -1,0 +1,28 @@
+* {
+    font-family: 'Cabin', sans-serif;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  body {
+    --primary-color: #000;
+    --secondary-color: #536390;
+    --bg-color: #fff;
+
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+  }
+  body.dark {
+    --primary-color: #fff;
+    --secondary-color: #539085;
+    --bg-color: #000;
+    
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+  }
+
+  .socials.dark {
+    filter: invert(100%);
+  }

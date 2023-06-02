@@ -1,0 +1,85 @@
+.single{
+}
+.singlepost{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 90%;
+    margin-bottom: 50px;
+}
+.postimage{
+    width: 850px;
+    margin: 0px 38px;
+    position: sticky;
+    top: 10px;
+    align-self: flex-start;
+}
+.single-postimage{
+    width: 100%;
+}
+.postbody{
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.post-title{
+    text-align: center;
+    padding: 20px;
+    white-space:nowrap;
+    font-size: 2.5vw;
+}
+.paragraph{
+    font-size: 1.3em;
+    line-height: 150%;
+    white-space: pre-wrap;
+    width: 100%;
+}
+.desc{
+    text-align: center;
+    white-space: pre-wrap;
+    font-size: 1.2em;
+}
+.post-video {
+    align-items: center;
+    padding-bottom: 10px;
+}
+.desc-secondary {
+    font-size: 0.9em;
+}
+
+@media only screen and (max-width: 1024px){
+    .singlepost{
+        flex-direction: column;
+    }
+    .postimage{
+        position: relative;
+        align-self: center;
+        width: 90%;
+    }
+    .postbody{
+        align-self: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        width:  100%;
+    }
+    .post-title{
+        font-size: 4vw;
+    }
+}
+@media screen and (max-width: 550px) {
+    .singlepost{
+        flex-direction: column;
+    }
+    .post-title{
+        font-size: 5vw;
+    }
+    .paragraph{
+        font-size: 4vw;
+    }
+    .desc {
+        font-size: 4vw;
+    }
+
+  }

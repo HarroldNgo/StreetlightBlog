@@ -1,0 +1,27 @@
+.admin-content{
+    padding-top: 50px;
+    width: 80%;
+}
+.admin-content input, textarea {
+    color: #000
+}
+.writeFormGroup{
+    display: block;
+    align-items: center;
+    padding: 10px;
+}
+.writeInput{
+    font-size: 15px;
+    padding: 20px;
+    width: 100%;
+    height: 200px;
+    box-shadow: 3px 3px 10px 6px rgba(0, 0,0,0.2);
+}
+.titlewriteinput{
+    height: 20px;
+    font-size: 20px;
+}
+.captionwriteinput{
+    height: 20px;
+    font-size: 20px;
+}
