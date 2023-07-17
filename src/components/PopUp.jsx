@@ -8,6 +8,7 @@ const Modal = ({ DarkMode, open, onClose }) => {
                 <div style={DarkMode ? { background: "#000" } : {}} className="menu">
                     <a href="/">HOME</a>
                     <a href="/categories">CATEGORIES</a>
+                    <a href="/portfolio">PORTFOLIO</a>
                     <a href="/about">ABOUT</a>
                 </div>
                 <p className="closeBtn" onClick={onClose}>X</p>

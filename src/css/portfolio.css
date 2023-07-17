@@ -113,3 +113,10 @@
 .cover-image:hover {
 
 }
+
+@media screen and (max-width: 650px) {
+    .portfolio-gallery {
+        margin: 20px 100px;
+    }
+
+}
