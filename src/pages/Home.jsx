@@ -1,4 +1,5 @@
 import "../css/home.css"
+import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import * as api from '../Api.jsx'
 import Slider from "react-slick";
@@ -7,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom"
 
 export default function Home() {
   const PF = "https://res.cloudinary.com/dmluqp41s/image/upload/"
+  const [dragging, setDragging] = useState(false);
 
   const postsQuery = () => ({
     queryKey: ['postsF'],
@@ -24,16 +26,17 @@ export default function Home() {
   }
   usePostQuery(posts)
 
-
   var settings = {
     initialSlide: Math.floor(Math.random() * 3),
     autoplay: true,
     autoplaySpeed: 3000,
-    lazyLoad: true,
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    centerMode: false,
+    swipeToSlide: true,
+    centerMode: true,
+    afterChange: () => setDragging(false),
+    onSwipe: () => setDragging(true)
   }
 
   return (
@@ -52,7 +55,11 @@ export default function Home() {
                       <span style={{ fontSize: 25 }}>{(post.desc).split(/\r?\n/).slice(post.desc.split(/\r?\n/).length / 2, post.desc.split(/\r?\n/).length).join("\n")}</span>
                     </p>
                   </div>
-                  <Link className="slider-link" to={`/post/${post.slug}`} state={post} >
+                  <Link
+                    className="slider-link"
+                    to={`/post/${post.slug}`}
+                    onClick={(e) => dragging && e.preventDefault()}
+                    state={post} >
                     <img src={PF + post.photo + ".png"} alt="" className={"slider-image " + (post.comingsoon ? "grey" : "")} />
                   </Link>
                 </div>
