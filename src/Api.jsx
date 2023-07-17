@@ -2,8 +2,8 @@ import axios from 'axios';
 
 const api = axios.create({
     //baseURL: 'https://api-dot-streetlight-378404.uk.r.appspot.com'
-    //baseURL: 'https://streetlight-api.onrender.com'
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://streetlight-api.onrender.com'
+    //baseURL: 'http://localhost:5000'
 })
 //COVERS/PORTFOLIO
 export const getCovers = async () => await api.get('/api/covers').then(res => res.data)
