@@ -69,7 +69,7 @@
 .tree{
   position: absolute;
   filter: grayscale(100%);
-  top: 97%;
+  top: 87%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
@@ -88,19 +88,19 @@
 }
 .c1{
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 49%;
   transform: translate(-50%, -50%);
 }
 .c2{
   position: absolute;
-  top: 130%;
+  top: 120%;
   left: 22%;
   transform: translate(-50%, -50%);
 }
 .c3{
   position: absolute;
-  top: 130%;
+  top: 120%;
   left: 76%;
   transform: translate(-50%, -50%);
 }

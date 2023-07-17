@@ -15,15 +15,18 @@ import StoriesM from '/assets/StoriesM.mp4'
 export default function SingleCategory() {
     const location = useLocation();
     const path = location.pathname.split("/")[2];
+    let posts = location.state;
 
-    const postQuery = (cat) => useQuery(['post', cat], () => api.getPostCat(cat))
-
-    const { data: posts, isLoading, isError, error } = postQuery(path)
-    if (isLoading) {
-        return ''
-    }
-    if (isError) {
-        return ''
+    if (!posts) {
+        const postQuery = (cat) => useQuery(['post', cat], () => api.getPostCat(cat))
+        const { data, isLoading, isError, error } = postQuery(path)
+        if (isLoading) {
+            return ''
+        }
+        if (isError) {
+            return ''
+        }
+        posts = data
     }
 
     return (
@@ -38,7 +41,7 @@ export default function SingleCategory() {
                     </video>
                     <div className="singlecat-inner-wrapper">
                         {posts.map((p, i) => (
-                            <p key={i} className='singlecats' to={`/post/${p._id}`}><Link className='singlecatslink' to={`/post/${p._id}`}>{p.title}</Link></p>
+                            <p key={i} className='singlecats' ><Link className='singlecatslink' to={`/post/${p.slug}`} state={p} >{p.title}</Link></p>
                         ))}
                     </div>
                 </div>

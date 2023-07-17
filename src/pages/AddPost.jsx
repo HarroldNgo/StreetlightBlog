@@ -7,6 +7,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 
 export default function AddPost() {
     const [title, setTitle] = useState("")
+    const [metadesc, setMetaDesc] = useState("")
     const [desc, setDesc] = useState("")
     const [videolink, setVideoLink] = useState("")
     const [body, setBody] = useState("")
@@ -24,6 +25,7 @@ export default function AddPost() {
         e.preventDefault();
         const newPost = {
             title,
+            metadesc,
             desc,
             body,
             frontpage,
@@ -45,7 +47,7 @@ export default function AddPost() {
         try {
             const res = await axios.post("/api/posts", newPost);
             queryClient.clear()
-            window.location.replace("/post/" + res.data._id);
+            window.location.replace("/post/" + res.data.slug);
 
         } catch (err) {
             setErrMsg("failed to make post (use unique title)");
@@ -104,6 +106,14 @@ export default function AddPost() {
                             type='text'
                             className='writeInput writeText'
                             onChange={e => setBody(e.target.value)}></textarea>
+                    </div>
+                    <div className="writeFormGroup">
+                        <h3>Image Caption:</h3>
+                        <textarea
+                            placeholder='Write stuffs'
+                            type='text'
+                            className='writeInput captionwriteinput'
+                            onChange={e => setMetaDesc(e.target.value)}></textarea>
                     </div>
                     <div className="writeFormGroup">
                         <h3>Category:</h3>

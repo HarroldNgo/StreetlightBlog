@@ -38,6 +38,7 @@ export default function Header() {
                 <ul>
                     <li><Link className={"nav-option " + (isDark ? "darkhov" : "")} to="/">HOME</Link></li>
                     <li className="cats"><Link className={"nav-option " + (isDark ? "darkhov" : "")} to="/categories">CATEGORIES</Link></li>
+                    <li><a className={"nav-option " + (isDark ? "darkhov" : "")} href="/portfolio">PORTFOLIO</a></li>
                     <li><Link className={"nav-option " + (isDark ? "darkhov" : "")} to="/about">ABOUT</Link></li>
                 </ul>
             </div>

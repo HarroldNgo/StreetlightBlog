@@ -1,0 +1,13 @@
+.left-sidebar {
+    border: 3px solid #CCCCCC;
+}
+.left-sidebar a{
+    margin: 10px 0px;
+    display: flex;
+    padding: 5px;
+    font-size: 1.3em;
+    width: 200px;
+}
+.left-sidebar a:hover{
+    background: #AAAAAA;
+}

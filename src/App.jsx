@@ -10,6 +10,7 @@ import Categories from './pages/Categories'
 //import Missing from './pages/Missing'
 import SinglePost from './pages/SinglePost'
 import SingleCategory from './pages/SingleCategory'
+import Portfolio from './pages/Portfolio'
 
 //Admin
 //import Admin from './pages/Admin'
@@ -33,6 +34,11 @@ const EditPost = loadable(()=> import('./pages/EditPost'))
 const AdminLayout = loadable(()=> import('./layouts/AdminLayout'))
 const Missing = loadable(()=> import('./pages/Missing'))
 
+const AdminPortfolio = loadable(()=> import('./pages/AdminPortfolio'))
+const AddCover = loadable(()=> import('./pages/AddCover'))
+const EditCover = loadable(()=> import('./pages/EditCover'))
+
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
@@ -40,15 +46,19 @@ const router = createBrowserRouter(
       <Route path="loginadmin" element={<Login />} />
       <Route path='about' element={<About />} />
       <Route path='categories' element={<Categories />} />
-      <Route path='categories/People' element={<SingleCategory />} />
-      <Route path='categories/Stories' element={<SingleCategory />} />
-      <Route path='categories/Movies' element={<SingleCategory />} />
-      <Route path="post/:postId" element={<SinglePost />} />
+      <Route path='categories/people' element={<SingleCategory />} />
+      <Route path='categories/stories' element={<SingleCategory />} />
+      <Route path='categories/movies' element={<SingleCategory />} />
+      <Route path="post/:title" element={<SinglePost />} />
+      <Route path="portfolio/*" element={<Portfolio />} />
 
       <Route path='admin' element={<AdminLayout />}>
         <Route index element={<Admin />} />
+        <Route path="portfolio" element={<AdminPortfolio />} />
+        <Route path="portfolio/add" element={<AddCover />} />
+        <Route path="portfolio/edit/:id" element={<EditCover/>} />
         <Route path="add" element={<AddPost />} />
-        <Route path="edit/:postId" element={<EditPost />} />
+        <Route path="edit/:title" element={<EditPost />} />
 
       </Route>
 

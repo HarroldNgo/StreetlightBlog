@@ -6,11 +6,13 @@ import axios from "../axios"
 import * as api from "../Api"
 import { useEffect, useState } from 'react'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
+import slugify from 'slugify'
 
 
 export default function EditPost() {
   const [title, setTitle] = useState("")
   const [desc, setDesc] = useState("")
+  const [metadesc, setMetaDesc] = useState("")
   const [videolink, setVideo] = useState("")
   const [body, setBody] = useState("")
   const [file, setFile] = useState(null)
@@ -24,10 +26,11 @@ export default function EditPost() {
 
   const queryClient = useQueryClient()
 
-  const { data, isLoading } = useQuery(['post', path], () => api.getPost(path), {
+  const { data, isLoading } = useQuery(['post', path], () => api.getPostByTitleSlug(path), {
     onSuccess: (data) => {
       setPost(data[0]);
       setTitle(data[0].title)
+      setMetaDesc(data[0].metadesc)
       setDesc(data[0].desc)
       setVideo(data[0].videolink)
       setBody(data[0].body)
@@ -44,6 +47,7 @@ export default function EditPost() {
     e.preventDefault();
     const updatedPost = {
       title,
+      metadesc,
       desc,
       body,
       frontpage,
@@ -65,7 +69,7 @@ export default function EditPost() {
     try {
       await axios.put("/api/posts/" + post._id, updatedPost)
       queryClient.clear()
-      window.location.replace("/post/" + post._id);
+      window.location.replace("/post/" + slugify(updatedPost.title, {remove: /[*+~.,;()'"!:@]/g, lower: true}));
     } catch (err) {
     }
   }
@@ -125,6 +129,15 @@ export default function EditPost() {
               className='writeInput writeText'
               defaultValue={post.body}
               onChange={e => setBody(e.target.value)}></textarea>
+          </div>
+          <div className="writeFormGroup">
+            <h3>Meta Description:</h3>
+            <textarea
+              placeholder='Write stuffs'
+              type='text'
+              className='writeInput captionwriteinput'
+              defaultValue={data[0].metadesc}
+              onChange={e => setMetaDesc(e.target.value)}></textarea>
           </div>
           <div className="writeFormGroup">
             <h3>Category:</h3>

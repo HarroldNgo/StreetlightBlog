@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import * as api from '../Api.jsx'
 import Slider from "react-slick";
 import usePostQuery from '../useHooks/usePostQuery'
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Home() {
   const PF = "https://res.cloudinary.com/dmluqp41s/image/upload/"
@@ -51,9 +52,9 @@ export default function Home() {
                       <span style={{ fontSize: 25 }}>{(post.desc).split(/\r?\n/).slice(post.desc.split(/\r?\n/).length / 2, post.desc.split(/\r?\n/).length).join("\n")}</span>
                     </p>
                   </div>
-                  <a className="slider-link" href={`/post/${post._id}`}>
+                  <Link className="slider-link" to={`/post/${post.slug}`} state={post} >
                     <img src={PF + post.photo + ".png"} alt="" className={"slider-image " + (post.comingsoon ? "grey" : "")} />
-                  </a>
+                  </Link>
                 </div>
               ))}
             </Slider>
@@ -70,7 +71,7 @@ export default function Home() {
                   <span style={{ fontSize: 25 }}>{(post.desc).split(/\r?\n/).slice(post.desc.split(/\r?\n/).length / 2, post.desc.split(/\r?\n/).length).join("\n")}</span>
                 </p>
               </div>
-              <a className="slider-link" href={`/post/${post._id}`}>
+              <a className="slider-link" href={`/post/${post.slug}`}>
                 <img src={PF + post.photo + ".png"} alt="" className={"slider-image " + (post.comingsoon ? "grey" : "")} />
               </a>
             </div>
