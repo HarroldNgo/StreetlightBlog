@@ -108,7 +108,7 @@ export default function AddPost() {
                             onChange={e => setBody(e.target.value)}></textarea>
                     </div>
                     <div className="writeFormGroup">
-                        <h3>Image Caption:</h3>
+                        <h3>Meta Description:</h3>
                         <textarea
                             placeholder='Write stuffs'
                             type='text'
